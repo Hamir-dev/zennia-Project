@@ -146,7 +146,7 @@ export default function CountyMap({
   );
 
   return (
-    <div className="relative overflow-hidden rounded-sm border border-line bg-ink">
+    <div className="relative overflow-hidden">
       <ComposableMap
         projection={projection}
         projectionConfig={projectionConfig ?? { scale }}

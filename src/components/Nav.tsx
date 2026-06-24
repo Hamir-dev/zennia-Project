@@ -32,7 +32,7 @@ export default function Nav() {
   return (
     <header
       className={clsx(
-        "fixed inset-x-0 top-0 z-50 flex w-full items-center justify-between px-6 py-5 transition-colors duration-300 sm:px-10 lg:px-16",
+        "fixed inset-x-0 top-0 z-50 flex w-full items-center justify-between px-6 py-4 transition-colors duration-300 sm:px-10 lg:px-16",
         scrolled || open
           ? "border-b border-line bg-ink/80 backdrop-blur-md"
           : "border-b border-transparent bg-transparent"
@@ -44,14 +44,14 @@ export default function Nav() {
         aria-label="Zennia — home"
         className="flex items-center"
       >
-        <span className="relative h-12 w-12 shrink-0 sm:h-14 sm:w-14">
+        <span className="relative h-16 w-16 shrink-0 sm:h-20 sm:w-20">
           <Image
-            src="/assets/logo/Zennia-logo.png"
+            src="/assets/logo/zennia-logo.png"
             alt="Zennia"
             fill
             priority
             unoptimized
-            sizes="56px"
+            sizes="80px"
             className="object-contain"
           />
         </span>
@@ -109,7 +109,7 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-[68px] z-40 flex flex-col gap-2 bg-ink px-6 py-10 md:hidden"
+            className="fixed inset-0 top-[96px] z-40 flex flex-col gap-2 bg-ink px-6 py-10 sm:top-[112px] md:hidden"
           >
             {[...links, { href: "#opportunity", label: "Own A Territory" }].map(
               (link, i) => (

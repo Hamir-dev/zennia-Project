@@ -83,7 +83,7 @@ export default function BrandIntro() {
             className="relative mb-8 h-40 w-40 sm:h-52 sm:w-52"
           >
             <Image
-              src="/assets/logo/Zennia-logo.png"
+              src="/assets/logo/zennia-logo.png"
               alt="Zennia — physicians at the center of healthcare"
               fill
               unoptimized

@@ -210,7 +210,7 @@ export default function StatesMap({
   );
 
   return (
-    <div className="relative overflow-hidden rounded-sm border border-line bg-ink">
+    <div className="relative overflow-hidden">
       {projection ? (
         <ComposableMap
           projection={projection as unknown as () => GeoProjection}
