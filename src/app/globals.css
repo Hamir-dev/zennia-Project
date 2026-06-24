@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+:root {
+  /* Monochrome brand palette */
+  --ink: #0f1112; /* Sensational Black — primary dark bg */
+  --ink-soft: #181c1f; /* Frost Black — secondary bg / card surface */
+  --surface: #22272b; /* Heather Black — borders, elevation */
+  --frost: #f0f0fa; /* soft off-white — light section breaks */
+  --white: #ffffff; /* Full White — primary contrast */
+
+  /* Semantic tokens (names kept stable so components cascade) */
+  --bone: #f0f0fa; /* primary text on dark */
+  --bone-dim: rgba(240, 240, 250, 0.52); /* muted body text */
+  --bronze: #ffffff; /* accent fills / open state */
+  --bronze-bright: #ffffff; /* brightest emphasis / hover / active */
+  --line: #22272b; /* dividers + borders */
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-surface: var(--surface);
+  --color-frost: var(--frost);
+  --color-white: var(--white);
+  --color-bone: var(--bone);
+  --color-bone-dim: var(--bone-dim);
+  --color-bronze: var(--bronze);
+  --color-bronze-bright: var(--bronze-bright);
+  --color-line: var(--line);
+  --font-serif: var(--font-fraunces);
+  --font-sans: var(--font-inter);
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--frost);
+  color: var(--ink);
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+/* Custom cursor: hide native pointer only on fine-pointer devices once JS is active */
+@media (pointer: fine) {
+  body.cursor-active,
+  body.cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Orbit preloader */
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-pulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Infinite marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 38s) linear infinite;
+}
+
+/* Ambient background drift (used by AnimatedBackground component) */
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate(-8%, -10%) scale(1);
+  }
+  50% {
+    transform: translate(10%, 6%) scale(1.18);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate(8%, 10%) scale(1.05);
+  }
+  50% {
+    transform: translate(-10%, -8%) scale(0.88);
+  }
+}
+
+@keyframes drift-c {
+  0%,
+  100% {
+    transform: translate(-50%, -45%) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -45%) rotate(180deg);
+  }
+}
+
+.animate-drift-a {
+  animation: drift-a 24s ease-in-out infinite;
+}
+
+.animate-drift-b {
+  animation: drift-b 28s ease-in-out infinite;
+}
+
+.animate-drift-c {
+  animation: drift-c 60s linear infinite;
+}
+
+/* Text-distortion glitch layers */
+@keyframes glitch-shift {
+  0% {
+    clip-path: inset(0 0 85% 0);
+    transform: translateX(-2px);
+  }
+  20% {
+    clip-path: inset(40% 0 40% 0);
+    transform: translateX(2px);
+  }
+  40% {
+    clip-path: inset(70% 0 10% 0);
+    transform: translateX(-1px);
+  }
+  60% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translateX(1px);
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-marquee {
+    animation: none !important;
+  }
+}
