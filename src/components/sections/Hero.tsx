@@ -26,16 +26,16 @@ export default function Hero() {
       {/* Background — US network / flag imagery */}
       <motion.div style={{ scale: bgScale }} className="absolute inset-0">
         <Image
-          src="/assets/images/new-bg.jpeg"
+          src="/assets/images/hero-final-updated.jpeg"
           alt="A glowing network of opportunity spanning the United States"
           fill
           priority
           unoptimized
           sizes="100vw"
-          className="object-cover opacity-90"
+          className="object-cover opacity-95 [filter:grayscale(12%)_brightness(0.98)_contrast(1.02)]"
         />
       </motion.div>
-      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/10 via-ink/35 to-ink" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-ink/5 via-ink/20 to-ink" />
 
       {/* Gravity particles ambient field */}
       <ParticleField className="absolute inset-0 h-full w-full" />

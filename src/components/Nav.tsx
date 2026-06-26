@@ -44,15 +44,19 @@ export default function Nav() {
         aria-label="Zennia — home"
         className="flex items-center"
       >
-        <span className="relative h-16 w-16 shrink-0 sm:h-20 sm:w-20">
+        <span className="relative h-24 w-24 shrink-0 sm:h-40 sm:w-40">
+          <span
+            aria-hidden
+            className="absolute inset-0 -z-10 scale-125 rounded-full bg-white/15 blur-xl"
+          />
           <Image
             src="/assets/logo/zennia-logo.png"
             alt="Zennia"
             fill
             priority
             unoptimized
-            sizes="80px"
-            className="object-contain"
+            sizes="160px"
+            className="object-contain drop-shadow-[0_0_14px_rgba(255,255,255,0.25)]"
           />
         </span>
       </a>
@@ -109,7 +113,7 @@ export default function Nav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 top-[96px] z-40 flex flex-col gap-2 bg-ink px-6 py-10 sm:top-[112px] md:hidden"
+            className="fixed inset-0 top-[128px] z-40 flex flex-col gap-2 bg-ink px-6 py-10 sm:top-[192px] md:hidden"
           >
             {[...links, { href: "#opportunity", label: "Own A Territory" }].map(
               (link, i) => (
