@@ -51,14 +51,14 @@ const floaters = [
     src: "/assets/images/vision/5.jpg",
     alt: "The Medical Independent — US doctors flee healthcare chaos.",
     className:
-      "left-3 bottom-[3%] hidden w-[20vw] max-w-[230px] rotate-[-3deg] lg:left-12 lg:block",
+      "left-3 bottom-[10%] hidden w-[20vw] max-w-[230px] rotate-[-3deg] lg:left-12 lg:block",
     speed: -70,
   },
   {
     src: "/assets/images/vision/7.jpg",
     alt: "Medscape — Specialists are 'underwater' with some insurance-preferred biosimilars.",
     className:
-      "right-3 bottom-[5%] hidden w-[20vw] max-w-[230px] rotate-[3deg] lg:right-12 lg:block",
+      "right-3 bottom-[12%] hidden w-[20vw] max-w-[230px] rotate-[3deg] lg:right-12 lg:block",
     speed: 80,
   },
 ];
@@ -96,7 +96,7 @@ function Floater({
       />
       {/* Dark overlay so the bright clipping blends into the section instead
           of reading as a stark white card. */}
-      <div className="absolute inset-0 bg-ink/30" />
+      <div className="absolute inset-0 bg-ink/45" />
     </motion.div>
   );
 }
