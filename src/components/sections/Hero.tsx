@@ -26,7 +26,7 @@ export default function Hero() {
       {/* Background — US network / flag imagery */}
       <motion.div style={{ scale: bgScale }} className="absolute inset-0">
         <Image
-          src="/assets/images/main-hero-bg.jpeg"
+          src="/assets/images/new-bg.jpeg"
           alt="A glowing network of opportunity spanning the United States"
           fill
           priority
